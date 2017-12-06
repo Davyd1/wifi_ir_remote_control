@@ -1,2 +1,2 @@
 # wifi_ir_remote_control
-create a universel télécommande wifi with use the IR signal of device
+create a universel wifi remote control with use the IR signal of device
