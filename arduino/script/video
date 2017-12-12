@@ -1,0 +1,53 @@
+#!/bin/sh
+source fonction.sh video
+
+case $1 in 
+	play|pause)
+		Send play
+	;;
+	stop)
+		Send stop
+	;;
+	preview)
+		Send preview
+	;;
+	next)
+		Send next
+	;;
+	record)
+		Send record
+	;;
+	sound_stronger)
+		Send sounds
+	;;
+	sound_less)
+		Send soundl
+	;;
+	mute)
+		Send mute
+	;;
+	up)
+		Send up
+	;;
+	down)
+		Send down
+	;;
+	left)
+		Send left
+	;;
+	right)
+		Send right
+	;;
+	source)
+		Send source
+	;;
+	zoom)
+		Set_Zoom	
+	;;
+	seize_neuf)
+		Set_SeizeNeuf
+	;;
+	enter)
+	;;
+esac
+	

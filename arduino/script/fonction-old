@@ -1,0 +1,86 @@
+#!/bin/sh
+
+PATH_FLAGS=""
+
+#permet de convertir le nom du periphérique en fonction de son ip
+#prend en arguments le nom d'un périphérique
+get_ip(){
+
+case $1 in 
+	video|bson|tnt)
+		echo IP_DEVICE;;
+	kodi)
+		echo kodi;;
+esac
+
+}
+
+# configuration du zoom
+reglage_zoom(){
+	IP=`get_ip video`
+        for i in 100..88
+        do
+                curl http://$IP/video/zoom
+        done
+}
+
+# configuration du 16/9
+reglage_seize_neuf(){
+	IP=`get_ip video`
+        for i in 1..4
+        do
+                curl http://$IP/video/seize_neuf
+        done
+}
+
+#Allume si pas deja fait l appareil specifie en argument
+PowerOn(){
+	IP=`get_ip ${DEVICE}`
+        [ ! -f ${PATH_FLAGS}/${DEVICE} ] && {
+                curl http://${IP}/${DEVICE}/power/1
+                touch ${PATH_FLAGS}/${DEVICE}/power
+        }
+}
+
+#eteint l appareil specifie en argument
+PowerOff(){
+	IP=`get_ip ${DEVICE}`
+        [ -f ${PATH_FLAGS}/${DEVICE} ] && {
+                curl http://${IP}/${DEVICE}/power/0
+                rm ${PATH_FLAGS}/${DEVICE}/power
+        }
+}
+
+#changer les souces de lecture d un appareil
+SourceChg(){
+	IP=`get_ip ${DEVICE}
+	curl http://${IP}/${DEVICE}/source
+}
+
+#change de chaine en fonction d un device
+ChannelChg()
+{
+        IP=`get_ip ${DEVICE}
+        curl http://${IP}/${DEVICE}/${CHANNEL}
+
+}
+
+#augmente le son en fonction d un device
+SoundStrg()
+{
+        IP=`get_ip ${DEVICE}
+        curl http://${IP}/${DEVICE}/SOUNDS
+}
+
+#baisse le son en fonction d un device
+SoundLess()
+{
+        IP=`get_ip ${DEVICE}
+        curl http://${IP}/${DEVICE}/SOUNDL
+}
+
+Mute()
+{
+        IP=`get_ip ${DEVICE}
+        curl http://${IP}/${DEVICE}/${MUTE}
+}

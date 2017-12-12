@@ -1,0 +1,42 @@
+#!/bin/sh
+
+#main
+case $1 in
+	video)
+		PowerOn video
+		PowerOn bson
+	;;
+	kodi)
+                PowerOn video
+                PowerOn bson
+		PowerOn kodi
+	;;
+	tnt)
+                PowerOn video
+                PowerOn bson
+                PowerOn tnt
+	;;
+	music)
+                PowerOff video
+                PowerOn bson
+	;;	
+	svideo)
+		PowerOff video
+	;;
+	skodi)
+		PowerOff kodi 
+	;;
+	stnt)
+		PowerOff tnt
+	;;
+	smusic)
+		PowerOff video
+		PowerOff tnt
+	;;
+	OFF)
+		PowerOff video
+		PowerOff bson
+		PowerOff tnt
+		PowerOff kodi
+	;;
+esac
