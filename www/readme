@@ -1,0 +1,21 @@
+CDCF de l'IHM
+
+Objectif : reprendre les boutons des differentes telecommandes
+		(liste présente dans arduino/hex_$device)
+liste des devices : 
+	- videoprojecteur
+	- barre de son
+	- mediacenter (s'appuyer sur kodi)
+	- lecteur dvd
+	- decodeur
+
+
+contraintes:
+	- avoir un onglet par device
+	- avoir un menu (à gauche ou en dessous des onglets) avec les boutons suivant :
+		- power
+		- mute 
+		- son +
+		- son -
+	- l'interface doit s'adapter à tous les devices (ordi, tablette, portable)
+	- l'interface doit être ergonomique avec des couleurs sobre 
