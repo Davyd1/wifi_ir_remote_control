@@ -1,3 +1,4 @@
+
 .container-fluid{
   height: 100%;
   min-height: 1080px;
@@ -6,6 +7,7 @@
   background-color: #3b4656;
   height: 100%;
   min-height: 1080px;
+  border-right: 5px groove white;
 }
 
 #right {
