@@ -1,13 +1,23 @@
 .btn-circle {
+  display: inline-block;
+  vertical-align: text-top;
   width: 30px;
   height: 30px;
   text-align: center;
   padding: 6px 0;
   font-size: 12px;
-  line-height: 1.42;
+  line-height: 0.5;
   border-radius: 15px;
+  border-width: thin;
 }
-
+#light-decrease:hover{
+  background-color: red;
+  color: white;
+}
+#light-increase:hover{
+  background-color: green;
+  color: white;
+}
 .container-fluid{
   height: 100%;
   min-height: 1080px;
